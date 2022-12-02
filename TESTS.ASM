@@ -85,10 +85,10 @@ START:
     PROC PROCEDURE
     PROCEDURE ENDP
     
-    CALL    PROCEDURE                 ; Near direct call
-    DB      9Ah, 12h, 34h, 56h, 78h    ; Workaround for far direct call
-    CALL    WORD PTR CS:[0ABCDh]     ; Near indirect call
-    CALL    DWORD PTR CS:[4564h]     ; Far indirect call
+    CALL    PROCEDURE                   ; Near direct call
+    DB      9Ah, 12h, 34h, 56h, 78h     ; Workaround for far direct call
+    CALL    WORD PTR CS:[0ABCDh]        ; Near indirect call
+    CALL    DWORD PTR CS:[4564h]        ; Far indirect call
     
     ; RET tests
     RET     12h
@@ -117,10 +117,10 @@ START:
     
     ; JMP tests
     JMP_LABEL:
-    JMP     JMP_LABEL                     ; Short direct jump
-    JMP     START                          ; Near direct jump
-    DB      0EAh, 78h, 56h, 34h, 12h     ; Workaround for far direct jump
-    JMP     WORD PTR CS:[0DDFFh]         ; Near indirect jump
+    JMP     JMP_LABEL                   ; Short direct jump
+    JMP     START                       ; Near direct jump
+    DB      0EAh, 78h, 56h, 34h, 12h    ; Workaround for far direct jump
+    JMP     WORD PTR CS:[0DDFFh]        ; Near indirect jump
     JMP     DWORD PTR CS:[0FFh]         ; Far indirect jump
     
     ; LOOP tests
