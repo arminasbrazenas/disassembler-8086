@@ -1,0 +1,2 @@
+# Recognize includes as Assembly files.
+*.inc linguist-language=Assembly
